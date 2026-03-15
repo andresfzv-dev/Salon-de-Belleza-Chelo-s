@@ -1,4 +1,7 @@
 package com.chelos.salon_api.domain.model;
 
-public class EstadoCita {
+public enum EstadoCita {
+    PENDIENTE,
+    COMPLETADA,
+    CANCELADA
 }

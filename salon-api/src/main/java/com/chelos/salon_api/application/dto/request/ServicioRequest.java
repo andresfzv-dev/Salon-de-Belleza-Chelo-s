@@ -1,47 +1,28 @@
-package com.chelos.salon_api.domain.model;
+package com.chelos.salon_api.application.dto.request;
 
-
-import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
-@Entity
 @Data
-@Table(name = "servicios")
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-public class Servicio {
+public class ServicioRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
-
-    @NotBlank(message = "El nombre del servicio es obligatorio")
-    @Column(nullable = false, unique = true)
+    @NotBlank(message = "El nombre es obligatorio")
     private String nombre;
 
     @NotNull(message = "El precio es obligatorio")
     @DecimalMin(value = "0.0", inclusive = false, message = "El precio debe ser mayor a cero")
-    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal precio;
 
     @NotNull(message = "La duración mínima es obligatoria")
     @Min(value = 1, message = "La duración mínima debe ser al menos 1 minuto")
-    @Column(nullable = false)
     private Integer duracionMinMinutos;
 
     @NotNull(message = "La duración máxima es obligatoria")
     @Min(value = 1, message = "La duración máxima debe ser al menos 1 minuto")
-    @Column(nullable = false)
     private Integer duracionMaxMinutos;
-
 }
