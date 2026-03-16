@@ -30,14 +30,20 @@ public class DataInitializer {
     @Bean
     public CommandLineRunner initData() {
         return args -> {
-            if (adminRepository.count() == 0) {
-                Admin admin = Admin.builder()
-                        .nombre(adminNombre)
-                        .email(adminEmail)
-                        .password(passwordEncoder.encode(adminPassword))
-                        .build();
-
-                log.info("Admin inicial creado: {}", adminEmail);
+            long count = adminRepository.count();
+            log.info("Admins en BD: {}", count);
+            if (count == 0) {
+                try {
+                    Admin admin = Admin.builder()
+                            .nombre(adminNombre)
+                            .email(adminEmail)
+                            .password(passwordEncoder.encode(adminPassword))
+                            .build();
+                    adminRepository.save(admin);
+                    log.info("Admin inicial creado: {}", adminEmail);
+                } catch (Exception e) {
+                    log.error("Error creando admin: {}", e.getMessage(), e);
+                }
             } else {
                 log.info("Admin ya existe, omitiendo inicialización");
             }
