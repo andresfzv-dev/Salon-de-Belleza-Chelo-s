@@ -30,4 +30,18 @@ public interface CitaRepository extends JpaRepository<Cita, UUID> {
             @Param("horaInicio") LocalTime horaInicio,
             @Param("horaFin") LocalTime horaFin
     );
+
+    @Query("""
+    SELECT COUNT(c) > 0 FROM Cita c
+    WHERE c.fecha = :fecha
+    AND c.id != :citaId
+    AND c.estado != 'CANCELADA'
+    AND (c.horaInicio < :horaFin AND c.horaFin > :horaInicio)
+""")
+    boolean existeSolapamientoExcluyendo(
+            @Param("fecha") LocalDate fecha,
+            @Param("horaInicio") LocalTime horaInicio,
+            @Param("horaFin") LocalTime horaFin,
+            @Param("citaId") UUID citaId
+    );
 }
