@@ -1,0 +1,514 @@
+{
+  "info": {
+    "_postman_id": "43922240-ce78-422e-aa23-b39a83dfb9ce",
+    "name": "Salón Chelos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48720242",
+    "_collection_link": "https://go.postman.co/collection/48720242-43922240-ce78-422e-aa23-b39a83dfb9ce?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "AuthLogin",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": "{\n    \"email\": \"admin@salonchelos.com\",\n    \"password\": \"admin123\"\n}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"admin@salonchelos.com\",\r\n    \"password\": \"admin123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear cliente",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Andrés Felipe\",\r\n    \"telefono\": \"3134567845\",\r\n    \"email\": \"andres@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear al mismo cliente",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": "{\n    \"email\": \"admin@salonchelos.com\",\n    \"password\": \"admin123\"\n}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"María López\",\r\n    \"telefono\": \"3001234567\",\r\n    \"email\": \"maria@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear cliente sin nombre",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": "{\n    \"email\": \"admin@salonchelos.com\",\n    \"password\": \"admin123\"\n}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"\",\r\n    \"telefono\": \"3112345678\",\r\n    \"email\": \"otro@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear un servicio",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": "{\n    \"email\": \"admin@salonchelos.com\",\n    \"password\": \"admin123\"\n}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Tinte de cabello\",\r\n    \"precio\": 40000,\r\n    \"duracionMinMinutos\": 60,\r\n    \"duracionMaxMinutos\": 60\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/servicios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "servicios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error al crear un servicio",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": "{\n    \"email\": \"admin@salonchelos.com\",\n    \"password\": \"admin123\"\n}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Tinte\",\r\n    \"precio\": 80000,\r\n    \"duracionMinMinutos\": 90,\r\n    \"duracionMaxMinutos\": 60\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/servicios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "servicios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear una cita",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"clienteId\": \"3014e2ed-470b-4a64-99ce-f620ea415239\",\r\n    \"servicioId\": \"52fb7e24-032a-48be-99a1-2072f49691c1\",\r\n    \"fecha\": \"2026-03-20\",\r\n    \"horaInicio\": \"10:00:00\",\r\n    \"duracionRealMinutos\": 60,\r\n    \"origen\": \"PRESENCIAL\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/citas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "citas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solapes de cita",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"clienteId\": \"aef4f6ce-7f45-4054-967e-485d7c76abec\",\r\n    \"servicioId\": \"05e61b93-3173-41a8-9ea5-c79157f4fdff\",\r\n    \"fecha\": \"2026-03-20\",\r\n    \"horaInicio\": \"10:30:00\",\r\n    \"duracionRealMinutos\": 60,\r\n    \"origen\": \"WHATSAPP\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/citas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "citas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cambiar el estado de la cita a COMPLETADA",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/citas/665f78dc-fce5-4047-8587-2bf554c57a1d/estado?estado=COMPLETADA",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "citas",
+            "665f78dc-fce5-4047-8587-2bf554c57a1d",
+            "estado"
+          ],
+          "query": [
+            {
+              "key": "estado",
+              "value": "COMPLETADA"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Modificar una cita completada",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"clienteId\": \"3014e2ed-470b-4a64-99ce-f620ea415239\",\r\n    \"servicioId\": \"52fb7e24-032a-48be-99a1-2072f49691c1\",\r\n    \"fecha\": \"2026-03-20\",\r\n    \"horaInicio\": \"11:00:00\",\r\n    \"duracionRealMinutos\": 60,\r\n    \"origen\": \"PRESENCIAL\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/citas/665f78dc-fce5-4047-8587-2bf554c57a1d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "citas",
+            "665f78dc-fce5-4047-8587-2bf554c57a1d"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registar pago",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"citaId\": \"665f78dc-fce5-4047-8587-2bf554c57a1d\",\r\n    \"monto\": 40000,\r\n    \"metodoPago\": \"EFECTIVO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pagos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Segundo pago a la misma cita",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBzYWxvbmNoZWxvcy5jb20iLCJpYXQiOjE3NzM2Mjc5MTQsImV4cCI6MTc3MzcxNDMxNH0.gETGSJc2H8S3GUyfbNhGv6A6Qye8MLXKKVotRMnb9uH1QfdFtGoCkZXc4TbF08kHXuxONNa4cnULpTsJ_6fU8Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"citaId\": \"665f78dc-fce5-4047-8587-2bf554c57a1d\",\r\n    \"monto\": 40000,\r\n    \"metodoPago\": \"TRANSFERENCIA\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pagos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
