@@ -25,7 +25,7 @@ public class AuthController {
     @GetMapping("/test-email")
     public ResponseEntity<String> testEmail() {
         emailService.enviarRecordatorio(
-                "andresf.zambranov@uqvirtual.edu.co",
+                "your email",
                 "María López",
                 " Corte de cabello",
                 " 20 de marzo de 2026",
