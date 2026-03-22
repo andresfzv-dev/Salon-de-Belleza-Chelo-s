@@ -44,4 +44,12 @@ public interface CitaRepository extends JpaRepository<Cita, UUID> {
             @Param("horaFin") LocalTime horaFin,
             @Param("citaId") UUID citaId
     );
+
+    @Query("""
+    SELECT c.horaInicio, c.horaFin FROM Cita c
+    WHERE c.fecha = :fecha
+    AND c.estado != 'CANCELADA'
+    ORDER BY c.horaInicio ASC
+""")
+    List<Object[]> findHorasOcupadasByFecha(@Param("fecha") LocalDate fecha);
 }
