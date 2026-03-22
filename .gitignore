@@ -9,6 +9,7 @@ target
 
 # Env
 .env
+*.env
 
 # IDE
 .vscode

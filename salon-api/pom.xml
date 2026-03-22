@@ -12,7 +12,7 @@
 	<artifactId>salon-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>salon-api</name>
-	<description>Backend para el salón de belleza de chelo´s</description>
+	<description>Backend para el salon de belleza de chelo´s</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -28,6 +28,8 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -130,6 +132,14 @@
 							<artifactId>lombok</artifactId>
 						</path>
 					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<propertiesEncoding>UTF-8</propertiesEncoding>
 				</configuration>
 			</plugin>
 			<plugin>
