@@ -1,0 +1,70 @@
+.calendarWrapper {
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-lg);
+}
+
+.calendarWrapper :global(.fc) {
+  font-family: var(--font-body);
+  font-size: 13px;
+}
+
+.calendarWrapper :global(.fc-toolbar-title) {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.calendarWrapper :global(.fc-button) {
+  background-color: var(--color-bg-secondary) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-primary) !important;
+  font-family: var(--font-body) !important;
+  font-size: 13px !important;
+  box-shadow: none !important;
+}
+
+.calendarWrapper :global(.fc-button:hover) {
+  background-color: var(--color-cream-dark) !important;
+}
+
+.calendarWrapper :global(.fc-button-active) {
+  background-color: var(--color-pink) !important;
+  border-color: var(--color-pink) !important;
+  color: white !important;
+}
+
+.calendarWrapper :global(.fc-today-button) {
+  background-color: var(--color-pink) !important;
+  border-color: var(--color-pink) !important;
+  color: white !important;
+}
+
+.calendarWrapper :global(.fc-col-header-cell) {
+  background-color: var(--color-bg-tertiary);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calendarWrapper :global(.fc-timegrid-slot) {
+  height: 48px;
+}
+
+.calendarWrapper :global(.fc-event) {
+  border-radius: var(--radius-sm);
+  border-width: 1.5px;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.calendarWrapper :global(.fc-daygrid-event) {
+  border-radius: var(--radius-sm);
+}
+
+.calendarWrapper :global(.fc-highlight) {
+  background-color: var(--color-pink-light) !important;
+}
