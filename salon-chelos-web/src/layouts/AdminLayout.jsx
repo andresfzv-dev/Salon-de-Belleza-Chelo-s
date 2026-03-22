@@ -1,14 +1,14 @@
-import { Outlet, NavLink, useNavigate } from 'react-router-dom'
+import { Outlet, NavLink } from 'react-router-dom'
 import { useCurrentUser, logout } from '../features/auth/hooks/useAuth'
 import styles from './AdminLayout.module.css'
 
 const NAV_ITEMS = [
-  { to: '/dashboard', label: 'Inicio', icon: '⊞' },
-  { to: '/citas', label: 'Citas', icon: '◷' },
-  { to: '/clientes', label: 'Clientes', icon: '◉' },
-  { to: '/servicios', label: 'Servicios', icon: '✦' },
-  { to: '/pagos', label: 'Pagos', icon: '◈' },
-  { to: '/reportes', label: 'Reportes', icon: '▦' }
+  { to: '/admin/dashboard', label: 'Inicio', icon: '⊞' },
+  { to: '/admin/citas', label: 'Citas', icon: '◷' },
+  { to: '/admin/clientes', label: 'Clientes', icon: '◉' },
+  { to: '/admin/servicios', label: 'Servicios', icon: '✦' },
+  { to: '/admin/pagos', label: 'Pagos', icon: '◈' },
+  { to: '/admin/reportes', label: 'Reportes', icon: '▦' }
 ]
 
 const AdminLayout = () => {

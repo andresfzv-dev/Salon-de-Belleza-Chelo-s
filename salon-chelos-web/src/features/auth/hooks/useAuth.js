@@ -17,7 +17,7 @@ export const useAuth = () => {
         email: data.email
       }))
       toast.success(`Bienvenida, ${data.nombre}`)
-      navigate('/dashboard')
+      navigate('/admin/dashboard')
     },
     onError: (error) => {
       const mensaje = error.response?.data?.mensaje || 'Error al iniciar sesión'
@@ -39,5 +39,5 @@ export const useCurrentUser = () => {
 export const logout = () => {
   localStorage.removeItem(TOKEN_KEY)
   localStorage.removeItem(USER_KEY)
-  window.location.href = '/login'
+  window.location.href = '/admin/login'
 }

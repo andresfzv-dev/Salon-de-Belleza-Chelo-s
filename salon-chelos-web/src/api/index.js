@@ -37,3 +37,10 @@ export const pagosApi = {
   ingresosDiarios: (fecha) => axiosInstance.get(`/pagos/reportes/diario?fecha=${fecha}`),
   ingresosMensuales: (anio, mes) => axiosInstance.get(`/pagos/reportes/mensual?anio=${anio}&mes=${mes}`)
 }
+
+export const publicApi = {
+  listarServicios: () => axiosInstance.get('/servicios'),
+  consultarDisponibilidad: (fecha, duracionMinutos) =>
+    axiosInstance.get(`/public/disponibilidad?fecha=${fecha}&duracionMinutos=${duracionMinutos}`),
+  crearCita: (data) => axiosInstance.post('/public/citas', data)
+}

@@ -8,15 +8,17 @@ import ServiciosPage from '../pages/ServiciosPage'
 import PagosPage from '../pages/PagosPage'
 import ReportesPage from '../pages/ReportesPage'
 import AdminLayout from '../layouts/AdminLayout'
+import PublicBookingPage from '../pages/PublicBookingPage'
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/" element={<PublicBookingPage />} />
+        <Route path="/admin/login" element={<LoginPage />} />
+        <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
         <Route
-          path="/"
+          path="/admin"
           element={
             <ProtectedRoute>
               <AdminLayout />
@@ -30,7 +32,7 @@ const AppRouter = () => {
           <Route path="pagos" element={<PagosPage />} />
           <Route path="reportes" element={<ReportesPage />} />
         </Route>
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   )
